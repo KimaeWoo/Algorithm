@@ -48,12 +48,11 @@ priorityQueue = [None]
 result = []
 
 # 입력 처리
-input = sys.stdin.read
-data = input().splitlines()
+input = sys.stdin.readline  # readline을 함수로 호출
 
-N = int(data[0])  # 첫 번째 줄은 연산 횟수
-for i in range(1, N + 1):  # 나머지 줄은 연산 데이터
-    x = int(data[i])
+N = int(input())  # 첫 번째 줄은 연산 횟수
+for i in range(N):  # 나머지 줄은 연산 데이터
+    x = int(input())
     if x == 0:
         sub(priorityQueue)
     else:
@@ -61,7 +60,6 @@ for i in range(1, N + 1):  # 나머지 줄은 연산 데이터
 
 # 결과 출력
 sys.stdout.write("\n".join(map(str, result)) + "\n")
-
 
 """
 # heapq를 활용한 우선순위 큐
